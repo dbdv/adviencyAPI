@@ -1,9 +1,12 @@
 import express from "express";
-const app = express();
-const port = 3000;
 import giftRouter from "./routes/gifts.route.js";
 import bodyParser from "body-parser";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
+const app = express();
+const port = process.env.PORT | 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
